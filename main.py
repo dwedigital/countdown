@@ -3,13 +3,13 @@ import requests
 
 def getWords() -> list:
     data = requests.get("https://www.mit.edu/~ecprice/wordlist.10000")
-    words = data.text.split("\n")
+    words = data.text.split("\n").lower()
     return words
 
 
 def getLetters() -> str:
     letters = input("Enter letters: ")
-    letters.strip()
+    letters.strip().lower()
     return letters
 
 
