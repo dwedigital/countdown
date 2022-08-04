@@ -29,12 +29,12 @@ def findWords(letters: str, words: list[str]) -> set[str]:
                 break
 
     possibleWords = sorted(possibleWords, key=len, reverse=True)
-    finalList:set = set(possibleWords)
+    finalList:set[str] = set(possibleWords)
     return finalList
 
 
 if __name__ == "__main__":
-    dictionary:list = getWords()
+    dictionary:list[str] = getWords()
     letters:str = getLetters()
 
     print(findWords(letters, dictionary))
