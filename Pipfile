@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 requests = "*"
+mypy = "*"
+types-requests = "*"
 
 [dev-packages]
 black = "*"

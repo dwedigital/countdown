@@ -1,7 +1,7 @@
 import requests
 
 
-def getWords() -> list:
+def getWords() -> list[str]:
     data = requests.get("https://www.mit.edu/~ecprice/wordlist.10000")
     words: list = data.text.split("\n")
     return words
@@ -13,8 +13,8 @@ def getLetters() -> str:
     return letters
 
 
-def findWords(letters: str, words: list) -> set:
-    possibleWords: list = []
+def findWords(letters: str, words: list[str]) -> set[str]:
+    possibleWords: list[str] = []
     for word in words:
         for letter in word:
             if letter not in letters:
@@ -35,6 +35,6 @@ def findWords(letters: str, words: list) -> set:
 
 if __name__ == "__main__":
     dictionary:list = getWords()
-    letters:list = getLetters()
+    letters:str = getLetters()
 
     print(findWords(letters, dictionary))
